@@ -33,8 +33,8 @@ syn keyword	cppThrow		throw
 syn keyword	cppNoexcept		noexcept
 syn cluster cppKeywords		add=cppTry,cppCatch,cppThrow,cppNoexcept
 
-syn keyword	cppStruct		struct 
-syn keyword	cppClass		class 
+syn keyword	cppStruct		struct
+syn keyword	cppClass		class
 syn keyword	cppUnion		union 
 syn keyword cppEnum			enum 
 syn keyword cppNamespace	namespace contained
@@ -136,6 +136,9 @@ syn	match	cppParenError		display ")"
 syn	region	cppCurly			transparent start='{' end='}' contains=TOP,cppCurlyError
 syn	match	cppCurlyError		display "}"
 
+syn keyword	cppOverride			override
+syn	keyword cppFinal			final 
+
 hi def link cppReturn			Statement
 hi def link cppContinue			Statement
 hi def link cppBreak			Statement
@@ -212,6 +215,9 @@ hi def link cppDynamicCast		Operator
 hi def link cppReinterpretCast	Operator
 
 hi def link	cppType				Type
+
+hi def link	cppOverride			Keyword
+hi def link cppFinal			Keyword
 
 hi def link	cppNumber			Constant
 hi def link cppHexNumber		Constant
