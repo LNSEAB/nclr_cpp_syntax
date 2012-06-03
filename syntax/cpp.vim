@@ -101,7 +101,9 @@ syn	keyword cppDynamicCast		dynamic_cast
 syn keyword cppReinterpretCast	reinterpret_cast
 syn	cluster	cppKeywords			add=cppConstCast,cppStaticCast,cppDynamicCast,cppReinterpretCast
 
-syn	match	cppNumber			"\<[0-9]\+"
+syn	match	cppNumber			"\<[0-9]\+\%(\.[0-9]*\%([eE][+-][0-9]\+\)\?[flFL]\?\)\?" 
+syn	match	cppFloatDecimal		"\.[0-9]\+\%([eE][+-][0-9]\+\)\?[flFL]\?"
+syn	match	cppFloatNoPoint		"\<[0-9]\+[eE][+-][0-9]\+[flFL]\?"	
 syn	match	cppHexNumber		"\<0x[0-9a-fA-F]\+"
 syn	region	cppCharacter		start="\%(L\|u8\|u\|U\)\?'" skip=+\\'+ end="'"
 syn	region	cppString			start="\%(L\|u8\|u\|U\)\?\"" skip=+\\\\|\\"|\\$+ excludenl end=+"+ end='$'
@@ -220,6 +222,8 @@ hi def link	cppOverride			Keyword
 hi def link cppFinal			Keyword
 
 hi def link	cppNumber			Constant
+hi def link cppFloatDecimal		Constant
+hi def link cppFloatNoPoint		Constant
 hi def link cppHexNumber		Constant
 hi def link cppCharacter		Constant
 hi def link	cppString			Constant
