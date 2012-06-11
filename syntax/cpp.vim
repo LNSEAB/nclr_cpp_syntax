@@ -1,7 +1,7 @@
 " Vim syntax file
 " Language:		C++11
 " Maintainer:	LNSEAB <lnseab@gmail.com>
-" Last Change:	2012 May 29
+" Last Change:	2012 June 11
 
 if exists("b:current_syntax")
 	finish
