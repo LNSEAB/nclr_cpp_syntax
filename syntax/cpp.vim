@@ -138,8 +138,10 @@ syn	match	cppParenError		display ")"
 syn	region	cppCurly			transparent start='{' end='}' contains=TOP,cppCurlyError
 syn	match	cppCurlyError		display "}"
 
-syn keyword	cppOverride			override
-syn	keyword cppFinal			final 
+syn keyword	cppOverride			override contained containedin=cppVirtualContext
+syn	keyword cppFinal			final contained containedin=cppVirtualContext
+syn match	cppVirtualContext	/\<final\_s*[:{]/
+syn match	cppVirtualContext	/\<\(override\|final\|override\_s\+final\|final\_s\+override\)\ze\(\(\_s*=\_s*0\)\=\_s*[,;]\|\_s*\({\|\<try\_s*{\|=\_s*\(default\|delete\)\_s*;\)\)/
 
 hi def link cppReturn			Statement
 hi def link cppContinue			Statement
