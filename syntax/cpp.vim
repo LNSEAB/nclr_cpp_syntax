@@ -107,7 +107,7 @@ syn	match	cppFloatNoPoint		"\<[0-9]\+[eE][+-][0-9]\+[flFL]\?"
 syn	match	cppHexNumber		"\<0x[0-9a-fA-F]\+"
 syn	region	cppCharacter		start="\%(L\|u8\|u\|U\)\?'" skip=+\\'+ end="'"
 syn	region	cppString			start="\%(L\|u8\|u\|U\)\?\"" skip=+\\\\|\\"|\\$+ excludenl end=+"+ end='$'
-syn	region	cppRawStringLiteral	start="\%(R\|u8R\|LR\|uR\|UR\)\"(" skip=+\\\\\|\\"\|\\$+ end=+)"+
+syn	region	cppRawStringLiteral	start="\%(R\|u8R\|LR\|uR\|UR\)\"\w\+(" skip=+\\\\\|\\"\|\\$+ end=')\w\+"'
 syn	cluster	cppLiteral			contains=cppNumber,cppCharacter,cppString,cppRawStringLiteral
 
 syn	region	cppComment			start="/\*" end="\*/" fold extend
