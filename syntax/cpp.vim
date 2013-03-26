@@ -122,7 +122,7 @@ syn	match	cppUsingNamespace		"\<using\_s\+namespace\_s\+\w\+" contains=cppUsing,
 
 syn	region	cppPPConditional	start="^\s*#\s*\%(if\|ifdef\|elif\|else\)" end="$"
 syn match	cppPPEndIf			"^\s*#\s*endif"
-syn match	cppPPInclude		"^\s*#\s*include\s*[<"][^>"]*[>"]" contains=cppPPIncludePath
+syn match	cppPPInclude		"^\s*#\s*include\s\+[0-9A-Za-z/<>\"_]\+\s*" contains=cppPPIncludePath
 syn match	cppPPIncludePath	"[<"][^>]*[>"]\s*$" contained
 syn region	cppPPDefine			start="^\s*#\s*define\s*" end="$"
 syn region	cppPPUndef			start="^\s*#\s*undef\s*" end="$"
